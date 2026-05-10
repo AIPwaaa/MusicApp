@@ -12,7 +12,7 @@ class MusicRepositoryImpl(
     }
 
     override suspend fun getServerTracks(): List<Track> {
-        TODO("Not yet implemented")
+        return emptyList()
     }
 
     override suspend fun uploadTrack(track: Track): Result<Unit> {
