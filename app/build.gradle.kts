@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization") version "2.2.10"
 }
 
 android {
@@ -40,11 +41,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.media3:media3-exoplayer:1.10.0")
-    implementation("androidx.media3:media3-session:1.10.0")
-    implementation("io.insert-koin:koin-android:3.5.0")
-    implementation("io.insert-koin:koin-androidx-compose:3.5.0")
-    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compiler)
@@ -64,4 +61,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    val ktor_version = "3.4.3"
+    implementation("io.ktor:ktor-client-android:$ktor_version")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
+    implementation("io.ktor:ktor-client-logging:$ktor_version")
+    implementation("androidx.media3:media3-exoplayer:1.10.0")
+    implementation("androidx.media3:media3-session:1.10.0")
+    implementation("io.insert-koin:koin-android:3.5.0")
+    implementation("io.insert-koin:koin-androidx-compose:3.5.0")
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
 }
